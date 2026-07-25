@@ -1,72 +1,55 @@
-# 🎯 Prompt Engineering Test Platform
+# 🎯 Prompt Engineering Test
 
-A modern, minimal candidate evaluation platform for **Prompt Engineering Interviews**, built with Streamlit, FastAPI, and Google's official **5-Step Prompting Framework (`T-C-R-E-I`)**.
+An evaluation platform designed to assess candidate prompt engineering skills against expert standards and guardrails.
 
----
-
-## 🌟 Key Features
-
-- **🎯 Scenario-Based Prompting Tests**: Real-world AI engineering task scenarios (Customer Support Email, GCP Cloud Architecture Proposal, Zero-Shot SQL JSON Extraction, Medical Triage Guardrails).
-- **📊 Google 5-Step Diagnostic Engine**: Automated evaluation against **Task, Context, References, Evaluate, and Iterate** (`T-C-R-E-I`).
-- **🧩 Multi-Select Diagnostic Quiz**: Interactive MCQ challenges testing candidates' diagnostic ability to catch flawed or well-crafted prompts.
-- **🎨 GitHub Dark Mode Theme**: Sleek, high-contrast dark theme styling (`#0d1117`, `#161b22`, `#30363d`, `#238636`).
-- **⚡ Clean Developer UX**: 100% empty candidate input boxes by default with zero placeholder text clutter.
+🔗 **Live Application**: [https://prompt-engineering-test-nim23jlzuqlqwl9n8lydrb.streamlit.app/](https://prompt-engineering-test-nim23jlzuqlqwl9n8lydrb.streamlit.app/)
 
 ---
 
-## 🚀 Quick Start & Local Running
+## ✨ Features
 
-### Prerequisites
-- Python 3.10+
-- [`uv`](https://github.com/astral-sh/uv) package runner
+- **Prompt Engineering Test**: Evaluate system and user prompts across real-world engineering scenarios.
+- **Diagnostic Quiz**: Multi-select challenges testing prompt structure and guardrail compliance.
+- **GitHub Dark Theme**: GitHub Dark UI (`#0d1117`, `#161b22`, `#30363d`).
+- **Clean Input Editors**: Empty prompt textareas by default for candidate evaluation.
 
-### 1. Clone & Install
+---
+
+## ⚡ Quick Start
+
+### Local Setup
+
 ```bash
-git clone https://github.com/<your-username>/prompt-engineering-test.git
+# Clone the repository
+git clone https://github.com/rishabhg8/prompt-engineering-test.git
 cd prompt-engineering-test
-uv sync
-```
 
-### 2. Launch the Application
-```bash
+# Install dependencies and run app
+uv sync
 uv run streamlit run frontend/app.py
 ```
-Open **[http://localhost:8501](http://localhost:8501)** in your web browser.
 
-### 3. Run Unit Test Suite
+Open `http://localhost:8501` in your browser.
+
+---
+
+## 🧪 Testing
+
+Run the unittest suite:
+
 ```bash
 uv run python -m unittest discover -s tests
 ```
 
 ---
 
-## 🏗️ Project Architecture
+## 📂 Architecture
 
 ```
-projects/
-├── app/
-│   ├── models/schemas.py             # Pydantic schemas
-│   ├── services/
-│   │   ├── google_guardrails.py      # T-C-R-E-I Evaluation Engine
-│   │   ├── task_scenarios.py         # Curated AI Engineering Scenarios
-│   │   └── mcq_bank.py               # Diagnostic Quiz Questions
-│   └── main.py                       # FastAPI API Backend
-├── frontend/
-│   ├── app.py                        # Streamlit Main App
-│   ├── style.css                     # GitHub Dark Theme System
-│   └── components/
-│       ├── guardrail_checker.py      # Candidate Prompt Test View
-│       └── mcq_quiz.py               # Diagnostic Quiz View
-├── tests/                            # Comprehensive Unittest Suite
+├── app/                  # Backend services and evaluation logic
+├── frontend/             # Streamlit app and GitHub Dark CSS theme
+│   ├── app.py            # Main entrypoint
+│   └── style.css         # GitHub Dark theme stylesheet
+├── tests/                # Unittest suite
 └── README.md
 ```
-
----
-
-## ☁️ Deploying on Streamlit Community Cloud
-
-1. Push this repository to your GitHub account.
-2. Visit [share.streamlit.io](https://share.streamlit.io/).
-3. Connect your GitHub repository.
-4. Set **Main file path** to `frontend/app.py`.
-5. Click **Deploy**!
