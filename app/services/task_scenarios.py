@@ -45,11 +45,11 @@ TASK_SCENARIOS: List[TaskScenario] = [
         title="Cloud Architecture Recommendation Prompt",
         category="Cloud Infrastructure & DevOps",
         difficulty="Medium",
-        objective="Recommend a cost-effective GCP cloud migration plan for a legacy monolith moving to containerized microservices.",
+        objective="Recommend a cost-effective cloud migration plan for a legacy monolith moving to containerized microservices.",
         background_context=(
             "A mid-sized Fintech company currently runs a monolithic Python/Django application on on-premises bare-metal servers. "
-            "They face scale bottlenecks during peak market hours and high maintenance costs. Their CTO wants to migrate to Google Cloud Platform (GCP). "
-            "The proposal must evaluate Compute Options (GKE vs Cloud Run vs GCE), Managed Storage (Cloud SQL vs AlloyDB), and DevOps CI/CD tools, "
+            "They face scale bottlenecks during peak market hours and high maintenance costs. Their CTO wants to migrate to managed cloud infrastructure. "
+            "The proposal must evaluate Compute Options (Containers vs Serverless vs VMs), Managed Databases, and DevOps CI/CD tools, "
             "providing cost-optimization strategies and risk mitigation steps."
         ),
         input_data=(
