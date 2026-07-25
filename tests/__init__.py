@@ -1,0 +1,3 @@
+"""
+AIMap Test Suite
+"""

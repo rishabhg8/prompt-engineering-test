@@ -1,0 +1,321 @@
+/* Official GitHub Dark Mode Theme System for AIMap */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+    --canvas-default: #0d1117;
+    --canvas-subtle: #161b22;
+    --canvas-overlay: #161b22;
+    --border-default: #30363d;
+    --border-muted: #21262d;
+    --fg-default: #f0f6fc;
+    --fg-muted: #c9d1d9;
+    --fg-subtle: #8b949e;
+    --accent-fg: #58a6ff;
+    --accent-emphasis: #1f6feb;
+    --success-fg: #3fb950;
+    --success-emphasis: #238636;
+    --success-hover: #2ea043;
+    --danger-fg: #f85149;
+    --danger-emphasis: #da3633;
+    --attention-fg: #d29922;
+    --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+    --mono-stack: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, monospace;
+}
+
+/* Base Canvas & Global Body Reset */
+html, body, [data-testid="stAppViewContainer"], [data-testid="stHeader"], [data-testid="stMain"] {
+    background-color: #0d1117 !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif !important;
+    color: #c9d1d9 !important;
+}
+
+/* Global Text Colors & High Contrast Headers */
+p, span, label, div, li, code, strong, em, dt, dd {
+    color: #c9d1d9;
+}
+
+h1, h2, h3, h4, h5, h6, strong, b {
+    color: #f0f6fc !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif !important;
+}
+
+a, a:visited {
+    color: #58a6ff !important;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Sidebar (GitHub Dark Canvas #010409) */
+[data-testid="stSidebar"] {
+    background-color: #010409 !important;
+    border-right: 1px solid #30363d !important;
+}
+
+[data-testid="stSidebar"] * {
+    color: #c9d1d9 !important;
+}
+
+[data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3 {
+    color: #f0f6fc !important;
+}
+
+/* Streamlit Radio Buttons in Sidebar & Main */
+div[data-testid="stRadio"] label, div[data-testid="stRadio"] label *, div[role="radiogroup"] label * {
+    color: #c9d1d9 !important;
+    font-size: 0.95rem;
+}
+
+div[data-testid="stRadio"] label:hover span {
+    color: #f0f6fc !important;
+}
+
+/* Streamlit Checkboxes */
+div[data-testid="stCheckbox"] label, div[data-testid="stCheckbox"] label *, div[data-baseweb="checkbox"] * {
+    color: #c9d1d9 !important;
+}
+
+div[data-testid="stCheckbox"] label:hover * {
+    color: #f0f6fc !important;
+}
+
+/* Widget Labels (High Contrast #f0f6fc) */
+[data-testid="stWidgetLabel"], [data-testid="stWidgetLabel"] label, [data-testid="stWidgetLabel"] p, .stMarkdown label {
+    color: #f0f6fc !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+}
+
+/* Text Inputs & Textareas */
+.stTextArea textarea, .stTextInput input, textarea, input[type="text"] {
+    background-color: #0d1117 !important;
+    border: 1px solid #30363d !important;
+    border-radius: 6px !important;
+    color: #c9d1d9 !important;
+    font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, monospace !important;
+    font-size: 0.9rem !important;
+    padding: 10px !important;
+}
+
+.stTextArea textarea:focus, .stTextInput input:focus, textarea:focus, input[type="text"]:focus {
+    border-color: #58a6ff !important;
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3) !important;
+    outline: none !important;
+}
+
+/* Streamlit BaseWeb Selectbox & Dropdown Options (Prevent black text on dark background) */
+div[data-baseweb="select"] {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+div[data-baseweb="select"] > div {
+    background-color: #0d1117 !important;
+    border: 1px solid #30363d !important;
+    border-radius: 6px !important;
+    color: #f0f6fc !important;
+}
+
+div[data-baseweb="select"] * {
+    color: #f0f6fc !important;
+}
+
+/* Dropdown Menu Options List Popover & Listbox */
+div[data-baseweb="popover"], div[data-baseweb="popover"] > div {
+    background-color: #161b22 !important;
+    border: 1px solid #30363d !important;
+    border-radius: 6px !important;
+}
+
+div[data-baseweb="menu"], ul[role="listbox"], li[role="option"], div[role="listbox"], div[role="option"], div[data-baseweb="option"] {
+    background-color: #161b22 !important;
+    color: #f0f6fc !important;
+    border-color: #30363d !important;
+}
+
+ul[role="listbox"] li * {
+    color: #f0f6fc !important;
+}
+
+li[role="option"]:hover, div[role="option"]:hover, div[data-baseweb="option"]:hover {
+    background-color: #1f242c !important;
+    color: #58a6ff !important;
+}
+
+/* Primary Action Buttons (GitHub Green #238636 with hover #2ea043) */
+.stButton > button, button[kind="primary"] {
+    background-color: #238636 !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    border: 1px solid rgba(240, 246, 252, 0.1) !important;
+    border-radius: 6px !important;
+    padding: 8px 20px !important;
+    transition: background-color 0.15s ease, border-color 0.15s ease !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif !important;
+}
+
+.stButton > button:hover, button[kind="primary"]:hover {
+    background-color: #2ea043 !important;
+    border-color: rgba(240, 246, 252, 0.2) !important;
+    color: #ffffff !important;
+}
+
+/* Code Blocks & Inline Code */
+pre, code, [data-testid="stCodeBlock"] {
+    background-color: #161b22 !important;
+    border: 1px solid #30363d !important;
+    border-radius: 6px !important;
+    font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, monospace !important;
+    color: #c9d1d9 !important;
+}
+
+code {
+    padding: 2px 6px;
+    font-size: 0.85em;
+}
+
+/* Alert Boxes & Streamlit Notifications */
+div[data-testid="stAlert"] {
+    background-color: #161b22 !important;
+    border: 1px solid #30363d !important;
+    border-radius: 6px !important;
+    color: #c9d1d9 !important;
+}
+
+div[data-testid="stAlert"] * {
+    color: #c9d1d9 !important;
+}
+
+/* Cards & Containers */
+.pm-card, .github-box, .apple-card, .framework-step-card {
+    background-color: #161b22 !important;
+    border: 1px solid #30363d !important;
+    border-radius: 6px !important;
+    padding: 16px;
+    margin-bottom: 16px;
+    color: #c9d1d9 !important;
+}
+
+/* Scenario Cards (Subtle #58a6ff Left Border Highlight) */
+.pm-card-scenario {
+    background-color: #161b22 !important;
+    border: 1px solid #30363d !important;
+    border-left: 4px solid #58a6ff !important;
+    border-radius: 6px !important;
+    padding: 20px;
+    margin-top: 16px;
+    margin-bottom: 24px;
+    color: #c9d1d9 !important;
+}
+
+.pm-card-scenario h3, .pm-card-scenario h4 {
+    color: #58a6ff !important;
+    margin-bottom: 10px !important;
+}
+
+/* Headers */
+.pm-header, .github-header, .apple-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.pm-title, .github-title, .apple-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #f0f6fc !important;
+    letter-spacing: -0.01em;
+}
+
+.pm-subtitle, .github-subtitle, .apple-subtitle {
+    color: #8b949e !important;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.apple-title-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Badges & Pills */
+.pm-badge, .github-badge, .github-repo-badge, .pill-badge {
+    background-color: #21262d !important;
+    border: 1px solid #30363d !important;
+    color: #58a6ff !important;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.pm-pill {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-right: 6px;
+}
+
+.pill-success, .badge-success, .badge-easy, .pill-green {
+    background-color: rgba(46, 160, 67, 0.15) !important;
+    color: #3fb950 !important;
+    border: 1px solid rgba(46, 160, 67, 0.4) !important;
+}
+
+.pill-danger, .badge-danger, .badge-hard, .pill-red {
+    background-color: rgba(248, 81, 73, 0.15) !important;
+    color: #f85149 !important;
+    border: 1px solid rgba(248, 81, 73, 0.4) !important;
+}
+
+.pill-warning, .badge-medium, .pill-amber {
+    background-color: rgba(210, 153, 34, 0.15) !important;
+    color: #d29922 !important;
+    border: 1px solid rgba(210, 153, 34, 0.4) !important;
+}
+
+.badge-info, .pill-blue, .pill-purple {
+    background-color: rgba(56, 139, 253, 0.15) !important;
+    color: #58a6ff !important;
+    border: 1px solid rgba(56, 139, 253, 0.4) !important;
+}
+
+/* Metric / Score Box */
+.pm-score-card, .github-score-box {
+    background-color: #161b22 !important;
+    border: 1px solid #30363d !important;
+    border-radius: 6px !important;
+    text-align: center;
+    padding: 20px;
+}
+
+.pm-score-val, .github-score-val {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-top: 8px;
+}
+
+.github-box-header, .apple-card-header, .framework-step-title {
+    font-weight: 600;
+    color: #f0f6fc !important;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.framework-step-desc {
+    font-size: 0.85rem;
+    color: #8b949e !important;
+    margin-top: 8px;
+    line-height: 1.5;
+}
